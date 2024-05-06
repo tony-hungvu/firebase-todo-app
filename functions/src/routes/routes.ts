@@ -1,6 +1,6 @@
 import * as Router from 'koa-router';
 
-import bookHandler from '../books/books.handler';
+import bookHandler from '../handlers/books.handler';
 
 // Prefix all routes with /books
 const router = new Router({
