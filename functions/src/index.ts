@@ -19,7 +19,10 @@ app.use(koaBody());
 app.use(routes.routes());
 app.use(routes.allowedMethods());
 
-// Start writing functions
-// https://firebase.google.com/docs/functions/typescript
-
-export const apiBooks = functions.https.onRequest(app.callback());
+export const apiBooks = functions.https.onRequest(async (req, res) => {
+  try {
+    await app.callback()(req, res);
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});

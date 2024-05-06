@@ -1,4 +1,4 @@
-import { Books } from '../books/books.interface';
+import { Books } from '../handlers/books.interface';
 import { postRef } from '../share/firestore.config';
 
 const getAll = async () => {
